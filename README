@@ -4,6 +4,22 @@ Drew Stephens <drew@dinomite.net>
 Sync an iTunes library—music and all—from one Mac to another.  I use this to
 pull all of my music from my desktop to my laptop.
 
-This is a dead simple string of rsync commands to copy the entirety of iTunes
-data files from one Mac to another.  Just give it the IP of the other Mac, and
-the location of the iTunes directory on each machine.
+Usage:
+    itunes_sync.pl [options] user remote_host
+
+Options:
+    -help
+        This help message
+
+    -remote
+        Remote iTunes directory (default: /Users/<user>/Music/iTunes)
+
+    -local
+        Local iTunes directory (default: /Users/<user>/Music/iTunes)
+
+    -bwlimit
+        Bandwidth limit
+
+    -nolibrary
+        Don't copy the iTunes library file
+
