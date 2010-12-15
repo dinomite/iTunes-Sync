@@ -71,20 +71,20 @@ if ($bwLimit) {
 }
 
 unless ($noLibrary) {
-    system("scp \"$host:$remoteDir/iTunes\\ Library\" $localDir/");
+    system("scp \"$user" . "@" . "$host:$remoteDir/iTunes\\ Library\" $localDir/");
 }
 
 # Album Artwork
 system("$rsync $rsyncOptions --exclude=\'Cache/*\' ".
-    "\"$host:$remoteDir/Album\\ Artwork/\" ".
+    "\"$user" . "@" . "$host:$remoteDir/Album\\ Artwork/\" ".
     "\"$localDir/Album Artwork/\"");
 
 # Mobile Applications
 system("$rsync $rsyncOptions ".
-    "\"$host:$remoteDir/Mobile\\ Applications/\" ".
+    "\"$user". "@" . "$host:$remoteDir/Mobile\\ Applications/\" ".
     "\"$localDir/Mobile Applications/\"");
 
 # The actual music
 system("$rsync $rsyncOptions ".
-    "\"$host:$remoteDir/iTunes\\ Music/\" ".
+    "\"$user" . "@" . "$host:$remoteDir/iTunes\\ Music/\" ".
     "\"$localDir/iTunes Music/\"");
