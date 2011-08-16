@@ -76,7 +76,7 @@ $rsyncOptions .= " --bwlimit $bwLimit" if ($bwLimit);
 $rsyncOptions .= " --exclude=Podcasts/***" if ($noPodcast);
 
 unless ($noLibrary) {
-    system("scp \"$user" . "@" . "$host:$remoteDir/iTunes\\ Library\" $localDir/");
+    system("scp \"$user" . "@" . "$host:$remoteDir/iTunes\\ Library.itl\" $localDir/");
 }
 
 # Album Artwork
